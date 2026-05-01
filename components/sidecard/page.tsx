@@ -9,7 +9,7 @@ export default function Sidecard() {
       </div>
       <Profile name="!Fael" playing="Code" />
       <Profile name="Edo" playing="FL Studio 20" />
-      <Profile name="Matiew" playing="Baiano" />
+      <Profile name="Matiew" playing="Overwatch" />
       <Profile name="Arthur" playing="Koovaks" />
     </section>
   );

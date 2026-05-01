@@ -18,7 +18,11 @@ export default function Home() {
       </div>
 
       <div className="hidden md:flex h-screen items-center justify-center gap-6">
-        <Card />
+        <Card
+          name="Samuel"
+          username="samueu"
+          avatarUrl="https://github.com/samueu.png"
+        />
         <Sidecard />
       </div>
     </main>
