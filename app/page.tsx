@@ -1,4 +1,5 @@
 import Card from "@/components/card/page";
+import Sidecard from "@/components/sidecard/page";
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="hidden md:grid h-screen place-items-center">
+      <div className="hidden md:flex h-screen items-center justify-center gap-6">
         <Card />
+        <Sidecard />
       </div>
     </main>
   );
