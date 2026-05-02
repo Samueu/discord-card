@@ -10,7 +10,7 @@ interface CardProps {
 export default function Card({ name, username, avatarUrl }: CardProps) {
   return (
     <div className="w-full max-w-87.5 bg-[#1d1e23] rounded-xl overflow-hidden flex flex-col shadow-lg border border-white/5">
-      <div className="h-24 w-full bg-red-400 relative">
+      <div className="h-24 w-full bg-[#660068] relative">
         <div className="absolute -bottom-10 left-4">
           <div className="relative">
             <Image

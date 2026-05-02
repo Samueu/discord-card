@@ -19,13 +19,17 @@ export default function Profile({ name, playing, color }: SidecardProps) {
 
   return (
     <>
-      <div className="text-white text-sm">
-        <p className={`${textColorClass} cursor-pointer`}>{name}</p>
+      <div className="text-white text-[12px] w-full">
+        <div className="bg-[#16181b] rounded-xl pl-5 ">
+          <p className={`${textColorClass} cursor-pointer text-[12px]`}>
+            {name}
+          </p>
 
-        <span className="text-sm flex items-center gap-1 cursor-pointer">
-          Playing <strong className="ml-1">{playing}</strong>
-          <Book size={16} />
-        </span>
+          <span className="text-[12px] font-thin flex items-center gap-1 cursor-pointer">
+            Playing <strong className="ml-1 text-[12px]">{playing}</strong>
+            <Book size={16} />
+          </span>
+        </div>
       </div>
     </>
   );
