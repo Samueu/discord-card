@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import CardContent from "./card-content";
+import { useTheme } from "@/context/ThemeContext";
 
 interface CardProps {
   name: string;
@@ -8,6 +11,8 @@ interface CardProps {
 }
 
 export default function Card({ name, username, avatarUrl }: CardProps) {
+  const { colorClass } = useTheme();
+
   return (
     <div className="w-full max-w-87.5 bg-[#1d1e23] rounded-xl overflow-hidden flex flex-col shadow-lg border border-white/5">
       <div className="h-24 w-full bg-[#660068] relative">
@@ -21,7 +26,9 @@ export default function Card({ name, username, avatarUrl }: CardProps) {
               className="rounded-full border-[6px] border-[#1d1e23] bg-[#1d1e23] object-cover"
             />
 
-            <div className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-[3px] border-[#1d1e23] rounded-full"></div>
+            <div
+              className={`absolute bottom-1 right-1 w-5 h-5 ${colorClass} border-[3px] border-[#1d1e23] rounded-full`}
+            ></div>
           </div>
         </div>
       </div>
