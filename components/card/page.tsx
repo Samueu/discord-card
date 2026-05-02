@@ -41,7 +41,7 @@ export default function Card({ name, username, avatarUrl }: CardProps) {
       </div>
 
       <div className="px-2 pb-4">
-        <CardContent status="Online" />
+        <CardContent />
       </div>
     </div>
   );
