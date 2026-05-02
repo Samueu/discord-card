@@ -2,7 +2,7 @@
 import { createContext, useState, useContext, ReactNode } from "react";
 
 const ThemeContext = createContext({
-  colorClass: "bg-red-500",
+  colorClass: "bg-green-500",
   setColor: (color: string) => {},
 });
 
