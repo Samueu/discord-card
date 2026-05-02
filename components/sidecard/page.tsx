@@ -1,4 +1,3 @@
-import { Book } from "lucide-react";
 import Profile from "./profile";
 
 export default function Sidecard() {
