@@ -7,10 +7,10 @@ export default function Sidecard() {
       <div className="pb-7">
         <p className="text-white">👑 Pessoas</p>
       </div>
-      <Profile name="!Fael" playing="Code" />
-      <Profile name="Edo" playing="FL Studio 20" />
-      <Profile name="Matiew" playing="Overwatch" />
-      <Profile name="Arthur" playing="Koovaks" />
+      <Profile color="red" name="!Fael" playing="Code" />
+      <Profile color="green" name="Edo" playing="FL Studio 20" />
+      <Profile color="purple" name="Matiew" playing="Overwatch" />
+      <Profile color="pink" name="Arthur" playing="Koovaks" />
     </section>
   );
 }
