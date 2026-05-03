@@ -7,6 +7,7 @@ export default function Sidecard() {
         <p className="text-white">👑 Pessoas</p>
       </div>
       <div className="space-y-2 w-70">
+        <Profile color="pink" name="Zayra" playing="Valorant" />
         <Profile color="red" name="!Fael" playing="Code" />
         <Profile color="green" name="Edo" playing="FL Studio 20" />
         <Profile color="purple" name="Matiew" playing="Overwatch" />
