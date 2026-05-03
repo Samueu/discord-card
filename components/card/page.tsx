@@ -3,6 +3,7 @@
 import Image from "next/image";
 import CardContent from "./card-content";
 import { useTheme } from "@/context/ThemeContext";
+import GitHubStatus from "./github-status";
 
 interface CardProps {
   name: string;
@@ -41,6 +42,7 @@ export default function Card({ name, username, avatarUrl }: CardProps) {
       </div>
 
       <div className="px-2 pb-4">
+        <GitHubStatus />
         <CardContent />
       </div>
     </div>
