@@ -2,7 +2,7 @@ import Profile from "./profile";
 
 export default function Sidecard() {
   return (
-    <section className="flex flex-col bg-[#1d1e23] h-70  p-7 rounded-xl">
+    <section className="flex flex-col bg-[#1d1e23] h-100  p-7 rounded-xl">
       <div className="pb-4">
         <p className="text-white">👑 Pessoas</p>
       </div>

@@ -78,7 +78,7 @@ export default function CardContent() {
 
         {spotify?.isPlaying ? (
           <div className="flex items-center w-full">
-            <div className="relative h-[60px] w-[60px] flex-shrink-0">
+            <div className="relative h-15 w-15 shrink-0">
               <Image
                 src={spotify.albumImageUrl || ""}
                 alt="Capa do álbum"

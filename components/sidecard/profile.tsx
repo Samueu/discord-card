@@ -20,7 +20,7 @@ export default function Profile({ name, playing, color }: SidecardProps) {
   return (
     <>
       <div className="text-white text-[12px] w-full">
-        <div className="bg-[#16181b] rounded-xl pl-5 ">
+        <div className="bg-[#16181b] rounded-xl pl-5 pt-1 h-12">
           <p className={`${textColorClass} cursor-pointer text-[12px]`}>
             {name}
           </p>
