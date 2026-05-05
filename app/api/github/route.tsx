@@ -1,22 +1,23 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const GITHUB_USER = "samueu";
-
   try {
     const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/events/public`,
+      `https://api.github.com/users/samueu/events/public`,
       {
         headers: {
-          "User-Agent": "NextJS-Portfolio-App",
+          "User-Agent": "Portfolio-Samuel",
+          Accept: "application/vnd.github.v3+json",
         },
+
         next: { revalidate: 60 },
       },
     );
 
     if (!res.ok) {
+      console.error(`GitHub API retornou erro: ${res.status}`);
       return NextResponse.json(
-        { error: "GitHub API limit or error" },
+        { error: "GitHub temporariamente indisponível" },
         { status: res.status },
       );
     }
@@ -24,24 +25,36 @@ export async function GET() {
     const events = await res.json();
 
     if (!events || events.length === 0) {
+      return NextResponse.json({ message: "Sem atividade recente" });
+    }
+
+    const lastPush = events.find(
+      (e: { type: string }) => e.type === "PushEvent",
+    );
+
+    if (lastPush) {
       return NextResponse.json({
-        message: "No recent activity",
-        type: "None",
-        repo: "",
+        type: "Push",
+        repo: lastPush.repo.name.split("/")[1],
+        message: lastPush.payload.commits[0].message,
+        createdAt: lastPush.created_at,
       });
     }
 
-    const lastEvent = events[0];
-
     return NextResponse.json({
-      type: lastEvent.type,
-      repo: lastEvent.repo.name,
-      createdAt: lastEvent.created_at,
-      message: lastEvent.payload?.commits?.[0]?.message || "Working on code",
+      type: events[0].type.replace("Event", ""),
+      repo: events[0].repo.name.split("/")[1],
+      message: "Atividade recente no GitHub",
+      createdAt: events[0].created_at,
     });
   } catch (error) {
-    console.error("Erro na rota do GitHub:", error);
-
-    return NextResponse.json({ error: "Connection failed" }, { status: 500 });
+    console.error("Erro de conexão detectado");
+    // Em vez de dar erro 500, retorna um status offline "fake" para o card não sumir
+    return NextResponse.json({
+      type: "Offline",
+      repo: "github.com",
+      message: "Servidor local sem conexão",
+      createdAt: new Date().toISOString(),
+    });
   }
 }
